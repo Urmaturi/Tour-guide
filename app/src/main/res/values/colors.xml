@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="table_layout_color">#75B4FE</color>
     <color name="tabIndicatorColor">#003C68</color>
+    <color name="name_color">#2A8CFF</color>
+    <color name="type_color">#ADAEAE</color>
+
 </resources>
