@@ -1,24 +1,30 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-class ItemListAdapter(var context: Context, var arrayList: ArrayList<ItemList>) : BaseAdapter() {
+class ItemListAdapter(var context: Context, var dataSource: ArrayList<ItemList>) : BaseAdapter() {
 
-    override fun getItem(position: Int): Any {
-        return arrayList.get(position)
-    }
 
-    override fun getItemId(p0: Int): Long {
-        return p0.toLong()
-    }
+    private val inflater: LayoutInflater =
+        context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+
 
     override fun getCount(): Int {
-        TODO("Not yet implemented")
+        return dataSource.size
+    }
+
+    override fun getItem(positions: Int): Any {
+        return dataSource[positions]
+    }
+
+    override fun getItemId(positionss: Int): Long {
+        return positionss.toLong()
     }
 
 
@@ -29,16 +35,15 @@ class ItemListAdapter(var context: Context, var arrayList: ArrayList<ItemList>) 
         var nameText: TextView = view.findViewById(R.id.tv_name_of)
         var typeText: TextView = view.findViewById(R.id.tv_type)
         var adressText: TextView = view.findViewById(R.id.tv_adress)
+        var workGrapText: TextView = view.findViewById(R.id.tv_work_graf)
 
-        var itemList: ItemList = arrayList.get(position)
+        var itemList: ItemList = dataSource.get(position)
 
         imageView.setImageResource(itemList.imageId!!)
         nameText.text = itemList.nameOfPlace
         typeText.text = itemList.typeOfPlace
         adressText.text = itemList.adressOfPlace
-
-
-
+        workGrapText.text = itemList.grafOfWork
 
         return view!!
     }
