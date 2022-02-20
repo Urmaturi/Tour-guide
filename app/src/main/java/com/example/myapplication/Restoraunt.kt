@@ -13,7 +13,7 @@ import com.example.myapplication.databinding.ActivityMainBinding
 class Restoraunt : Fragment() {
 
     private lateinit var listView: ListView
-
+    var list: ArrayList<ItemList> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,9 +31,8 @@ class Restoraunt : Fragment() {
         return view
     }
 
-
     private fun setDataArrayList(): ArrayList<ItemList> {
-        var list: ArrayList<ItemList> = ArrayList()
+
         list.add(
             ItemList(
                 R.drawable.cyclone,
@@ -41,8 +40,9 @@ class Restoraunt : Fragment() {
                 "Ресторан",
                 "Проспект Чуй 136",
                 "Открыто до 05:00",
-                "dasf",
-                "sdaf"
+                "Ресторан европейской кухни",
+                "Cредний чек 2000 сом",
+                "+996 700 700 800"
             )
         )
         list.add(
@@ -52,13 +52,13 @@ class Restoraunt : Fragment() {
                 "Ресто-чайхана",
                 "ул. Льва Толстого, 102/4",
                 "Открыто до 02:00",
-                "dasf",
-                "sdaf"
+                "Восточная кухня",
+                "Средний чек 1500 сом",
+                "+996 552 600 600"
             )
         )
-
-
         return list!!
     }
+
 
 }

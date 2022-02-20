@@ -6,6 +6,7 @@ package com.example.myapplication
         var adressOfPlace: String,
         var grafOfWork: String,
         var aboutPlace: String,
-        var costOfPlace: String
+        var costOfPlace: String,
+        var telephone: String
     )
 
