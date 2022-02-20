@@ -9,7 +9,6 @@ import android.widget.ListView
 import com.example.myapplication.databinding.ActivityMainBinding
 
 
-
 class Restoraunt : Fragment() {
 
     private lateinit var listView: ListView
@@ -19,12 +18,12 @@ class Restoraunt : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-         var view: View =  inflater.inflate(R.layout.fragment_restoraunt, container, false)
+        var view: View = inflater.inflate(R.layout.fragment_restoraunt, container, false)
 
-        var listView : ListView = view.findViewById(R.id.ListViewRestoraunt)
+        var listView: ListView = view.findViewById(R.id.ListViewRestoraunt)
 
         val objectLists = setDataArrayList()
-        val adapter = ItemListAdapter( view.context , objectLists)
+        val adapter = ItemListAdapter(view.context, objectLists)
         listView.adapter = adapter
 
 
@@ -42,7 +41,8 @@ class Restoraunt : Fragment() {
                 "Открыто до 05:00",
                 "Ресторан европейской кухни",
                 "Cредний чек 2000 сом",
-                "+996 700 700 800"
+                "+996 700 700 800",
+                "https://go.2gis.com/4m5c3q"
             )
         )
         list.add(
@@ -54,9 +54,38 @@ class Restoraunt : Fragment() {
                 "Открыто до 02:00",
                 "Восточная кухня",
                 "Средний чек 1500 сом",
-                "+996 552 600 600"
+                "+996 552 600 600",
+                "https://go.2gis.com/ezut5g"
             )
         )
+        list.add(
+            ItemList(
+                R.drawable.baikazan,
+                "Bai Kazan",
+                "Ресто-чайхана",
+                "ул. К. Баялинова 131",
+                "Открыто до 23:00",
+                "Восточная кухня",
+                "Средний чек 2000 сом",
+                "+996 555 456 789",
+                "https://go.2gis.com/q099h"
+            )
+        )
+        list.add(
+            ItemList(
+                R.drawable.barhat,
+                "Barhat",
+                "Ресто-чайхана",
+                "ул. И. Ахунбаева 17а",
+                "Открыто до 24:00",
+                "Восточная кухня",
+                "Средний чек 1800 сом",
+                "+996 777 825 963",
+                "https://go.2gis.com/6gba7"
+            )
+        )
+
+
         return list!!
     }
 

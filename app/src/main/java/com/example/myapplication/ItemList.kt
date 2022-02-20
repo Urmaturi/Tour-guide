@@ -7,6 +7,7 @@ package com.example.myapplication
         var grafOfWork: String,
         var aboutPlace: String,
         var costOfPlace: String,
-        var telephone: String
+        var telephone: String,
+        var url: String
     )
 

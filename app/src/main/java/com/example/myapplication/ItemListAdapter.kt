@@ -1,6 +1,9 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +11,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.databinding.DataBindingUtil
-import com.example.myapplication.databinding.ActivityMainBinding
+import androidx.core.content.ContextCompat.startActivity
+
 
 //lateinit var binding: ActivityMainBinding
 class ItemListAdapter(var context: Context, var dataSource: ArrayList<ItemList>) : BaseAdapter() {
@@ -17,6 +20,7 @@ class ItemListAdapter(var context: Context, var dataSource: ArrayList<ItemList>)
 
     // val binding : ActivityMainBinding =    DataBindingUtil.inflate(this, R.layout.item_layout, container: ViewGroup? , false)
          //.setContentView( inflater, R.layout.item_layout)
+
 
 
 
@@ -95,7 +99,7 @@ class ItemListAdapter(var context: Context, var dataSource: ArrayList<ItemList>)
 //                    "Pressed ${nameText.text} =: ${nameText.id}",
 //                    Toast.LENGTH_SHORT
 //                ).show()
-                nameText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 30F);
+                nameText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25F);
                 adressText.setTextColor(context.getResources().getColor(R.color.name_color) )
                 aboutPlace.visibility = View.VISIBLE
                 telephonePlace.visibility = View.VISIBLE
@@ -123,11 +127,43 @@ class ItemListAdapter(var context: Context, var dataSource: ArrayList<ItemList>)
 
                 tempBool = !tempBool
             }
+
+
+            adressText.setOnClickListener()
+            {
+                val context = view.context
+                val uri = Uri.parse("${itemList.url}")
+                val locationintent = Intent(Intent.ACTION_VIEW, uri)
+                 startActivity(context,locationintent,null)
+
+                }
+
+
+
+
+
+            telephonePlace.setOnClickListener()
+            {
+                val number = Uri.parse("tel:${telephonePlace.text}")
+                val callIntent: Intent = Intent(Intent.ACTION_DIAL,number)
+                val context = view.context
+                startActivity(context,callIntent,null)
+//                Uri number = Uri.parse("tel:5551234");
+//                Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+
+            }
+
+
+
+
+
         }
 
 
         return view!!
     }
+
+
 
 
 
