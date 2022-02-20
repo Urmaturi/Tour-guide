@@ -8,8 +8,10 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrItem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+
 
         <ImageView
             android:id="@+id/imageView"
@@ -32,14 +34,16 @@
             android:id="@+id/tv_name_of"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginStart="40dp"
             android:text="name"
-
             android:textColor="@color/name_color"
             android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/tvAbout"
+            app:layout_constraintBottom_toTopOf="@+id/tv_type"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+
+             />
 
         <TextView
             android:id="@+id/tv_type"
@@ -47,9 +51,9 @@
             android:layout_height="wrap_content"
 
             android:text="type"
-            app:layout_constraintBottom_toTopOf="@+id/tv_adress"
+            app:layout_constraintBottom_toTopOf="@+id/tvAdress2"
             app:layout_constraintStart_toStartOf="@+id/tv_name_of"
-            app:layout_constraintTop_toBottomOf="@+id/tvChek" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_of" />
 
         <TextView
             android:id="@+id/tv_work_graf"
@@ -57,9 +61,9 @@
             android:layout_height="wrap_content"
             android:text="workGraf"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/tvTelephone"
+            app:layout_constraintBottom_toTopOf="@+id/tvAbout"
             app:layout_constraintStart_toStartOf="@+id/tv_name_of"
-            app:layout_constraintTop_toBottomOf="@+id/tv_adress" />
+            app:layout_constraintTop_toBottomOf="@+id/tvAdress2" />
 
         <TextView
             android:id="@+id/tv_adress"
@@ -67,12 +71,13 @@
             android:layout_height="wrap_content"
             android:text="adress"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/tv_work_graf"
+            app:layout_constraintBottom_toTopOf="@+id/tvTelephone"
             app:layout_constraintStart_toStartOf="@+id/tv_name_of"
-            app:layout_constraintTop_toBottomOf="@+id/tv_type" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_workGraph2" />
 
         <ImageView
             android:id="@+id/imageButton"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -91,7 +96,8 @@
 
             app:layout_constraintBottom_toTopOf="@+id/tvChek"
             app:layout_constraintStart_toStartOf="@+id/tv_name_of"
-            app:layout_constraintTop_toBottomOf="@+id/tv_name_of" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_work_graf" />
+
 
         <TextView
             android:id="@+id/tvTelephone"
@@ -101,19 +107,16 @@
             android:textColor="@color/name_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tv_name_of"
-            app:layout_constraintTop_toBottomOf="@+id/tv_work_graf"
-              />
-
+            app:layout_constraintTop_toBottomOf="@+id/tv_adress" />
 
         <TextView
             android:id="@+id/tvChek"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="price"
-            app:layout_constraintBottom_toTopOf="@+id/tv_type"
+            app:layout_constraintBottom_toTopOf="@+id/tv_workGraph2"
             app:layout_constraintStart_toStartOf="@+id/tv_name_of"
-            app:layout_constraintTop_toBottomOf="@+id/tvAbout"
-              />
+            app:layout_constraintTop_toBottomOf="@+id/tvAbout" />
 
         <ImageView
             android:id="@+id/buttonOnImgView"
@@ -129,10 +132,10 @@
             android:id="@+id/imageViewPhone"
             android:layout_width="18dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
 
+            android:layout_marginEnd="7dp"
             app:layout_constraintEnd_toStartOf="@+id/tvTelephone"
-            app:layout_constraintTop_toBottomOf="@+id/tv_work_graf"
+            app:layout_constraintTop_toTopOf="@+id/tvTelephone"
             app:srcCompat="@drawable/ic_baseline_call_24" />
 
         <ImageView
@@ -154,6 +157,24 @@
             app:layout_constraintEnd_toStartOf="@+id/tvAbout"
             app:layout_constraintTop_toTopOf="@+id/tvAbout"
             app:srcCompat="@drawable/ic_baseline_info_24" />
+
+        <TextView
+            android:id="@+id/tvAdress2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="adress2"
+            app:layout_constraintBottom_toTopOf="@+id/tv_work_graf"
+            app:layout_constraintStart_toStartOf="@+id/tv_name_of"
+            app:layout_constraintTop_toBottomOf="@+id/tv_type" />
+
+        <TextView
+            android:id="@+id/tv_workGraph2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="workGraph2"
+            app:layout_constraintBottom_toTopOf="@+id/tv_adress"
+            app:layout_constraintStart_toStartOf="@+id/tv_name_of"
+            app:layout_constraintTop_toBottomOf="@+id/tvChek" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

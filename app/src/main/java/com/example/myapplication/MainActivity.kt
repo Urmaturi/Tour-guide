@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.example.myapplication.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
@@ -30,6 +31,13 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     private fun intial() {
         binding.viewPager.adapter = PagerAdapter(this)
         binding.tableLayout.tabIconTint = null
+
+
+
+
+
+
+
         TabLayoutMediator(binding.tableLayout, binding.viewPager)
         { tab, pos ->
             when (pos) {
