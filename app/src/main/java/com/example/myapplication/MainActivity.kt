@@ -8,35 +8,19 @@ import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
-    private lateinit var binding: ActivityMainBinding
-
-
-    private var arrayList: ArrayList<ItemList>? = null
-
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding       // удалил не нужный arrayList удалил лишний метод /onClickListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         intial()
-
-
-
-
     }
 
     private fun intial() {
         binding.viewPager.adapter = PagerAdapter(this)
         binding.tableLayout.tabIconTint = null
-
-
-
-
-
-
 
         TabLayoutMediator(binding.tableLayout, binding.viewPager)
         { tab, pos ->
@@ -51,9 +35,4 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
     }
 
 
-
-    override fun onItemClick(parent: AdapterView<*>?, viev: View?, pozition: Int, idiwka: Long) {
-         var items: ItemList = arrayList?.get(pozition)!!
-        Toast.makeText(applicationContext, "pressed ${items.nameOfPlace}",Toast.LENGTH_SHORT).show()
-    }
 }

@@ -18,15 +18,13 @@
             android:layout_height="wrap_content"
             android:background="@color/table_layout_color"
             android:minHeight="?attr/actionBarSize"
-
+            android:theme="@style/ToolbarFont"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:title="@string/title_text"
-
-
-            app:titleTextColor="#003C68" />
+             app:title="Bishkek Guide"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tableLayout"
@@ -37,8 +35,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:tabIndicatorColor="@color/tabIndicatorColor"
+
             app:tabIndicatorHeight="4dp"
+            android:theme="@style/TabLayoutFont"
+            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="#003C68"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <androidx.viewpager2.widget.ViewPager2

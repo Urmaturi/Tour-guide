@@ -12,19 +12,15 @@ class Fitness : Fragment() {
     private lateinit var listView: ListView
     var list: ArrayList<ItemList> = ArrayList()
 
-    override fun onCreateView(
+    override fun onCreateView(                                  // насчет этого метода вроде везде его используют )) даже в предыдущем уроке
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view: View =  inflater.inflate(R.layout.fragment_restoraunt, container, false)
-
-        var listView : ListView = view.findViewById(R.id.ListViewRestoraunt)
-
+        var view: View =  inflater.inflate(R.layout.fragment_universally, container, false)
+        var listView : ListView = view.findViewById(R.id.ListViewUniversal)
         val objectLists = setDataArrayList()
         val adapter = ItemListAdapter( view.context , objectLists)
         listView.adapter = adapter
-
-
         return view
     }
 

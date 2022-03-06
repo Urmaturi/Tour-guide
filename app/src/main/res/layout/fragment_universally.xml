@@ -3,14 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Cinema">
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".Restoraunt">
 
 
     <ListView
-        android:id="@+id/ListViewCinema"
+        android:id="@+id/ListViewUniversal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+       />
 
 </FrameLayout>

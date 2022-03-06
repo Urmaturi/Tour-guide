@@ -13,24 +13,20 @@ class Cinema : Fragment() {
     private lateinit var listView: ListView
     var list: ArrayList<ItemList> = ArrayList()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+    override fun onCreateView(     // насчет этого метода вроде везде его используют )) даже в предыдущем уроке
+        inflater: LayoutInflater,  // так сделано(architecture UI)  и в ссылках к этому уроку тоже сделано так пожтому не трогал
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view: View =  inflater.inflate(R.layout.fragment_restoraunt, container, false)
-
-        var listView : ListView = view.findViewById(R.id.ListViewRestoraunt)
-
+        var view: View = inflater.inflate(R.layout.fragment_universally, container, false)
+        var listView: ListView = view.findViewById(R.id.ListViewUniversal)
         val objectLists = setDataArrayList()
-        val adapter = ItemListAdapter( view.context , objectLists)
+        val adapter = ItemListAdapter(view.context, objectLists)
         listView.adapter = adapter
-
-
         return view
     }
 
     private fun setDataArrayList(): ArrayList<ItemList> {
-
         list.add(
             ItemList(
                 R.drawable.broadwey,
@@ -55,7 +51,6 @@ class Cinema : Fragment() {
                 " от 180 сом",
                 "+996 552 600 600",
                 "https://go.2gis.com/zy0bi"
-
             )
         )
         list.add(
@@ -84,7 +79,6 @@ class Cinema : Fragment() {
                 "https://go.2gis.com/n8cwn"
             )
         )
-
 
         return list!!
     }
